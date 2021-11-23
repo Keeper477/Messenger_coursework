@@ -58,13 +58,13 @@
                             <form th:action="@{/profile}" th:object="${userForm}" method="POST" enctype="multipart/form-data">
                                 <div class="form-group" style="width: 20%; margin: auto">
                                     <input type="text" th:field="*{lastName}" class="form-control mb-1" placeholder="Фамилия"
-                                           autofocus="true">
+                                           autofocus="true" required>
                                     <span class="has-error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
                                 </div>
                                 <br>
                                 <div class="form-group" style="width: 20%; margin: auto">
                                     <input type="text" th:field="*{firstName}" class="form-control mb-1" placeholder="Имя"
-                                           autofocus="true">
+                                           autofocus="true" required>
                                     <span class="has-error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
                                 </div>
                                 <br>

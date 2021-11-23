@@ -75,7 +75,7 @@ public class UserController {
     }
 
     @PostMapping("/profile")
-    public String setUserRole(@ModelAttribute("userForm") User userForm, Model model) {
+    public String setUserInfo(@ModelAttribute("userForm") User userForm, Model model) {
         var user = userService.getUser();
         userService.changeUserInfo(user, userForm);
         model.addAttribute("user", user);

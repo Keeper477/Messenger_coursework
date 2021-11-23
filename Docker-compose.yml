@@ -1,0 +1,21 @@
+version: "3"
+services:
+  mysql_db:
+    container_name: mysql_db
+    image: "mysql:8.0"
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: messenger
+      MYSQL_USER: root
+      MYSQL_PASSWORD: mysql
+      MYSQL_ROOT_PASSWORD: mysql
+  api_service:
+    container_name: api_service
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql_db
