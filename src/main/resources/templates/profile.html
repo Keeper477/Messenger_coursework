@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
+    <script type="text/javascript">
+        function change() {
+            show1()
+            show2()
+        }
+        function show1() {
+            var obj = document.getElementById("info");
+            if (obj.style.display == "none") {
+                obj.style.display = "block";
+            }
+            else obj.style.display = "none";
+        }
+        function show2() {
+            var obj = document.getElementById("change_info");
+            if (obj.style.display == "none") {
+                obj.style.display = "block";
+            }
+            else obj.style.display = "none";
+        }
+    </script>
+    <title>Личный кабинет</title>
+</head>
+<body>
+
+<main class="content">
+    <div class="container p-0">
+
+        <div class="card">
+                    <div style="text-align: center;">
+                        <a href="/" class="btn btn-info btn-lg mr-1 px-3 d-none d-md-inline-block">Чат</a>
+                        <a href="/users" class="btn btn-primary btn-lg mr-1 px-3">Друзья</a>
+                        <a href="/profile" class="btn btn-light border btn-lg px-3">Профиль</a>
+                    </div>
+
+                    <div class="m-5 text-center ">
+                        <p>Добро пожаловать в личный кабинет "<span sec:authentication="name"></span>"</p>
+                        <div th:object="${user}" id="info">
+                            <p>Фамилия: <label th:text="${user.getLastName()}"></label ></p>
+                            <p>Имя: <label th:text="${user.getFirstName()}"></label ></p>
+                            <button class="btn btn-primary btn-small" onclick="change()"
+                                    style="border-color: #20fc72; background-color: #00ff5e; color: #ffffff">Изменить</button>
+                            <br>
+                            <br>
+                            <a class="btn btn-primary btn-small" href="/logout"
+                                    style="border-color: #fc2020; background-color: #ff0000; color: #ffffff">Выйти</a>
+                        </div>
+
+                        <div style="display: none;" id="change_info">
+                            <form th:action="@{/profile}" th:object="${userForm}" method="POST" enctype="multipart/form-data">
+                                <div class="form-group" style="width: 20%; margin: auto">
+                                    <input type="text" th:field="*{lastName}" class="form-control mb-1" placeholder="Фамилия"
+                                           autofocus="true">
+                                    <span class="has-error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+                                </div>
+                                <br>
+                                <div class="form-group" style="width: 20%; margin: auto">
+                                    <input type="text" th:field="*{firstName}" class="form-control mb-1" placeholder="Имя"
+                                           autofocus="true">
+                                    <span class="has-error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary btn-small"
+                                        style="border-color: #20fc72; background-color: #00ff5e; color: #ffffff">Изменить
+                                </button>
+                            </form>
+                            <br>
+                            <br>
+                            <button class="btn btn-primary btn-small" onclick="change()"
+                                    style="border-color: #fc2020; background-color: #ff0000; color: #ffffff">Отменить</button>
+                        </div>
+                    </div>
+
+                    <hr class="d-block d-lg-none mt-1 mb-0">
+                </div>
+        </div>
+    </div>
+</main>
+
+<script type="text/javascript" th:src="@{/webjars/jquery/3.6.0/jquery.min.js/}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/5.0.1/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/setActiveNavLink.js/}"></script>
+</body>
+</html>

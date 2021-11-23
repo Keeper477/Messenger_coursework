@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login_reg.css}"/>
+
+    <title>Создать аккаунт</title>
+</head>
+
+<body>
+
+<div class="container">
+    <form method="POST" class="form-signin" th:object="${userForm}" th:action="@{/registration}">
+        <h2 class="form-signin-heading text-center">Создать аккаунт</h2>
+        <div class="form-group">
+            <input type="text" th:field="*{username}" class="form-control mb-1" placeholder="Логин"
+                   autofocus="true">
+            <span class="has-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="text" th:field="*{lastName}" class="form-control mb-1" placeholder="Фамилия"
+                   autofocus="true">
+            <span class="has-error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="text" th:field="*{firstName}" class="form-control mb-1" placeholder="Имя"
+                   autofocus="true">
+            <span class="has-error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="password" th:field="*{password}" class="form-control mb-1" placeholder="Пароль">
+            <span class="has-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="password" th:field="*{passwordConfirm}" class="form-control mb-1"
+                   placeholder="Введите ваш пароль ещё раз">
+            <span class="has-error" th:if="${#fields.hasErrors('passwordConfirm')}"
+                  th:errors="*{passwordConfirm}"></span>
+        </div>
+        <div style="text-align: center;">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрироваться</button>
+        </div>
+        <div class="text-center mt-3"><a href="/login">У меня есть аккаунт!</a></div>
+    </form>
+</div>
+
+<script type="text/javascript" th:src="@{/webjars/jquery/3.6.0/jquery.min.js/}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/5.0.1/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/setActiveNavLink.js/}"></script>
+</body>
+</html>

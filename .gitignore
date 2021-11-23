@@ -40,7 +40,7 @@
 # .idea/compiler.xml
 # .idea/jarRepositories.xml
 # .idea/modules.xml
-# .idea/*.iml
+.idea/
 # .idea/modules
 # *.iml
 # *.ipr
