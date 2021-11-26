@@ -1,7 +1,7 @@
 package messenger.services;
 
-import messenger.models.Role;
-import messenger.models.User;
+import messenger.entities.Role;
+import messenger.entities.User;
 import messenger.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

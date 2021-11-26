@@ -1,7 +1,7 @@
 package messenger.services;
 
 import lombok.extern.slf4j.Slf4j;
-import messenger.models.User;
+import messenger.entities.User;
 import messenger.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;

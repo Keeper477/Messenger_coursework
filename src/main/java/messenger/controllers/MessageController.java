@@ -1,7 +1,6 @@
 package messenger.controllers;
 
-import messenger.models.Message;
-import messenger.models.User;
+import messenger.entities.Message;
 import messenger.services.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

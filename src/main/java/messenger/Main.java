@@ -1,6 +1,6 @@
 package messenger;
 
-import messenger.models.Role;
+import messenger.entities.Role;
 import messenger.repositories.RoleRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

@@ -1,6 +1,6 @@
 package messenger.controllers;
 
-import messenger.models.User;
+import messenger.entities.User;
 import messenger.services.RoleService;
 import messenger.services.SecurityService;
 import org.springframework.beans.factory.annotation.Autowired;

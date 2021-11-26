@@ -1,6 +1,6 @@
 package messenger.repositories;
 
-import messenger.models.Message;
+import messenger.entities.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package messenger.models;
+package messenger.entities;
 
 import lombok.Getter;
 import lombok.Setter;

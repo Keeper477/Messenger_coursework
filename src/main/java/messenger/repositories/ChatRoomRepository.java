@@ -1,6 +1,6 @@
 package messenger.repositories;
 
-import messenger.models.ChatRoom;
+import messenger.entities.ChatRoom;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

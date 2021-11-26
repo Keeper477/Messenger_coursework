@@ -1,13 +1,13 @@
 package messenger.services;
 
-import messenger.models.ChatRoom;
-import messenger.models.Message;
+import messenger.entities.ChatRoom;
+import messenger.entities.Message;
 import messenger.repositories.ChatRoomRepository;
 import messenger.repositories.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import messenger.models.User;
+import messenger.entities.User;
 
 import java.util.List;
 import java.util.Optional;

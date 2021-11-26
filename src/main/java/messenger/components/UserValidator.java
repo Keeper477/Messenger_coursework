@@ -1,6 +1,6 @@
 package messenger.components;
 
-import messenger.models.User;
+import messenger.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
